@@ -1,0 +1,45 @@
+<!-- Login page for admin users to get access to website management options -->
+<!DOCTYPE html>
+<!-- As with all our pages, it is structured as one top-level container that contains at least
+ one div for the maincontent, with the possibility of adding additional divs above or below
+ for common elements like a nav bar, or page header and footer.-->
+<body>
+    <div class = "container">
+        <!-- Below is the Div for the login form. It is the main content of this page. -->
+        <div class = "maincontent">
+            <!-- Form will run the login.php script on the server for authentication. 
+            TODO: @Souper Please feel free to add client-side JavaScript validation to this form as well if you would like.-->
+            <form action="/processlogin.php" method = "post">
+                <!--TODO: @NotDashy, I would recommend adding CSS flexboxes on either side of this fieldset
+                to flexibly center the login box in the page; up to you though of course!-->
+                <!--Box containing login form elements-->
+                <fieldset>
+                    <legend>Administrator Login</legend>
+                    
+                    <!--Inputs and associated labels. Username is an input of type email
+                    while password is naturally of type password. Both fields are required.-->
+                    <label for = "username">Username:</label>
+                    <br>
+                    <input type="email" id = "username" name = "username" required>
+
+                    <br>
+
+                    <!--Password input and associated label.-->
+                    <label for = "password">Password:</label>
+                    <br>
+                    <input type="password" id = "password" name = "password" required> 
+                
+                    <br>
+                    
+                    <a href="/signup.html">Request Account</a> <!-- Goes to sign up page -->
+                    <a href="/loginhelp.html">Help Logging In</a> <!--Links to a page that describes solutions to common issues logging in-->
+                    
+                    <br>
+                    
+                    <!--Submit button.-->
+                    <button id="submitLogin">Submit</button>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+</body>
