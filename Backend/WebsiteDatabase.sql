@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Feb 14, 2026 at 04:01 PM
+-- Generation Time: Feb 18, 2026 at 10:11 PM
 -- Server version: 10.4.34-MariaDB-log
 -- PHP Version: 8.3.29
 
@@ -18,13 +18,8 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `COMP3340_Products`
+-- Database: `WebsiteDatabase`
 --
-
-/*
-This database contains two independent tables, one for tracking products and the other for tracking user
-accounts. See SQL comments below for details of each table and field. 
-*/
 
 -- --------------------------------------------------------
 
@@ -35,6 +30,8 @@ accounts. See SQL comments below for details of each table and field.
 CREATE TABLE `Accounts` (
   `ID` int(11) NOT NULL COMMENT 'Account ID Primary Key.',
   `Username` char(255) NOT NULL COMMENT 'Account''s username. Maximum length of 255 char. Must be unique.',
+  `FirstName` varchar(255) NOT NULL,
+  `LastName` varchar(255) NOT NULL,
   `EncryptedPassword` varchar(255) NOT NULL COMMENT 'Stores encrypted password hash for authentication.',
   `AccountStatus` varchar(155) NOT NULL DEFAULT 'Pending' COMMENT 'Current account permission level (acts as status too). Values are Pending, Blocked, or Admin.'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci COMMENT='Table of user accounts, logins, their permission level, and current status.';
@@ -44,11 +41,6 @@ CREATE TABLE `Accounts` (
 --
 -- Table structure for table `Items`
 --
-
-/*Note: The items table treats each option (item) as its own record. Options can then be grouped under a single product name.
-  For example, a wireless keyboard and wired keyboard could both be their own row in the database with their own price and picture and so on, 
-  but assigning the ProductName 'Keyboard' to both would indicate to the website that they are multiple options of a single product. 
-  This allows for greater flexibility when presenting different options.*/
 
 CREATE TABLE `Items` (
   `ID` int(11) NOT NULL COMMENT 'Primary ID used to track each item in the database.',
@@ -65,7 +57,7 @@ CREATE TABLE `Items` (
 
 INSERT INTO `Items` (`ID`, `ProductName`, `ItemName`, `Description`, `Price`, `Picture`) VALUES
 (1, 'Keyboard', 'Wired', 'USB Wired Keyboard with easy to use connection. Simply plug in and you are good to go.', 39.99, 'images/wiredkeyboard.jpg'),
-(3, 'Keyboard', 'Wireless', 'Wireless keyboard that connects to your computer through Bluetooth and/or WiFi. No troublesome USB cable required.', 85.99, 'images/wirelesskeyboard.jpg'),
+(3, 'Keyboard', 'Wireless', 'Wireless keyboard that connects to your computer through Bluetooth and/or WiFi. No troublesome USB cable required.', 87.99, 'images/wirelesskeyboard.jpg'),
 (4, 'USB Hub Adapter', '4 in 1', 'Expand the laptop ports available to you with a USB-C Hub Adapter. Provides extra ports for both USB and HDMI.', 45.99, 'images/USB-C4in1.jpg'),
 (6, 'USB Hub Adapter', '6 in 1', 'Expand the number and types of laptop ports available to you with this multi-port adapter. Provides 6 new slots, including those for both USB-A and USB-C cables.', 65.99, 'images/USB-C6in1.jpg'),
 (7, 'Smart LED Light', 'Adjustable White Light', 'A smart LED desk lamp with multiple colour temperatures that you set depending on the time of day and your mood. Choose from a warm 2700K up to a bright 5700K, or anything in between.', 50.99, 'images/smartLED1.jpg'),
@@ -80,7 +72,7 @@ INSERT INTO `Items` (`ID`, `ProductName`, `ItemName`, `Description`, `Price`, `P
 (16, 'HD Webcam', '4K at 30 FPS', 'For crystal clear web conferencing, a 4K webcam may be what you want. Providing crisp UHD video at 30 frames per second, a 4K webcam is a high-end option for ultra-clear video recording.', 179.99, 'images/webcam4k.jpg'),
 (17, 'Monitor Stand', 'Fixed', 'Sturdy metal monitor stand can improve your viewing position and limit the amount of time spent looking at an angle. ', 59.99, 'images/fixedstand.jpg'),
 (18, 'Monitor Stand', 'Adjustable', 'Height adjustable ergonomic monitor.', 79.99, 'images/standAdjustable.jpg'),
-(19, 'Portable Power Bank', '10,000 mAh', 'Portable fast charging battery with the capacity for at least 1 full charge on average.', 30.99, 'images/1charge.jpg'),
+(19, 'Portable Power Bank', '10,000 mAh', 'Portable fast charging battery with the capacity for at least 1 full charge on average.', 31.99, 'images/1charge.jpg'),
 (20, 'Portable Power Bank', '20,000mAh', 'High-capacity multi-device charging power.', 50.99, 'images/3charges.jpg'),
 (21, 'Smart Watch', 'Silicon Sports Band', 'Smart watch with a durable silicon sports band.', 50.99, 'images/silicon.jpg'),
 (22, 'Smart Watch', 'Leather Band', 'Smart watch with a premium and professional looking leather wrist band.', 70.99, 'images/leather.jpg'),
@@ -127,10 +119,16 @@ ALTER TABLE `Items`
 --
 
 --
+-- AUTO_INCREMENT for table `Accounts`
+--
+ALTER TABLE `Accounts`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Account ID Primary Key.', AUTO_INCREMENT=14;
+
+--
 -- AUTO_INCREMENT for table `Items`
 --
 ALTER TABLE `Items`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Primary ID used to track each item in the database.', AUTO_INCREMENT=44;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Primary ID used to track each item in the database.', AUTO_INCREMENT=46;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
