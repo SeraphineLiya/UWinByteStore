@@ -1,8 +1,11 @@
 .container{
     background-color: rgba(226, 89, 43, 0.218);
-    padding: 30px;
+    margin:30px;
+    padding:30px;
+    padding-inline: 10%;
 }
 
 .maincontent{
-    background-color:rgba(15, 247, 170, 0.2);
+    background-color:rgba(15, 247, 170, 0.05);
+    padding-inline:5%;
 }
