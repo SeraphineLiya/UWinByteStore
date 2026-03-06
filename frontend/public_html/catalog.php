@@ -12,13 +12,27 @@
 ?>
 
 <!DOCTYPE html>
-
-<html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Products | UWinByteStore</title>
+</head>
 
 <!-- As with all our pages, it is structured as one top-level container that contains at least
  one div for the maincontent, with the possibility of adding additional divs above or below
  for common elements like a nav bar, or page header and footer.-->
     <body>
+        <header>
+<h1>UWinByteStore</h1>
+<nav>
+<a href="index.html">Home</a>
+<a href="catalog.php">Products</a>
+<a href="about.html">About</a>
+<a href="login.html">Login</a>
+<a href="signup.html">Signup</a>
+</nav>
+</header>
         <div class = "container">
             <div class = "maincontent">
                 <h1>Recommended Technology Catalog</h1>
@@ -46,5 +60,9 @@
                 </div>
             </div>
         </div>
+        <footer>
+<p>&copy; 2026 UWinByteStore</p>
+</footer>
     </body>
+
 </html>
