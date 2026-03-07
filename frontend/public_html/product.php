@@ -40,7 +40,7 @@
 </header>
         <h1><?= $topItem['ProductName']?></h1> <!-- Product title -->
         <hr>
-        <img src = "<?= $topItem['Picture']?>"> <!-- Product photo -->
+        <img src="<?= $topItem['Picture']?>" alt="<?= $topItem['ProductName'] ?>">
         <br>
         <!-- This select list will allow for other options to be viewed. It will need JavaScript to make the page update though. 
          TODO: @Souper, this will require JavaScript to make work properly.-->
@@ -63,5 +63,6 @@
     </body>
 
 </html>
+
 
 
