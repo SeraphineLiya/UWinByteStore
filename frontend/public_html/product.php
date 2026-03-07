@@ -20,7 +20,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Product | UWinByteStore</title>
-    <link rel="stylesheet" href="styles.css">
+<meta name="description" content=" View product details for technology items in the UWinByteStore catalog, including options, price, and description.">
+<meta name="keywords" content="product details, technology catalog, keyboard, mouse, webcam, projector, electronics">
+<meta name="robots" content="index, follow">
+<link rel="stylesheet" href="styles.css">
 </head>
 
     <!-- As with all our pages, it is structured as one top-level container that contains at least
@@ -63,6 +66,7 @@
     </body>
 
 </html>
+
 
 
 
