@@ -17,6 +17,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Products | UWinByteStore</title>
+<meta name="description" content=" Browse the UWinByteStore catalog of recommended technology products including keyboards, webcams, projectors, storage devices, and more.">
+<meta name="keywords" content="technology catalog, keyboards, webcams, projectors, SSD, power bank, tech accessories, electronics">
+<meta name="robots" content="index, follow">
 <link rel="stylesheet" href="styles.css">
 </head>
 
@@ -68,6 +71,7 @@
     </body>
 
 </html>
+
 
 
 
