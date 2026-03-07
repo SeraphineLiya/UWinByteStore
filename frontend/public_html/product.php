@@ -33,6 +33,7 @@
 <a href="index.html">Home</a>
 <a href="catalog.php">Products</a>
 <a href="about.html">About</a>
+<a href="help.html">Help</a>
 <a href="login.html">Login</a>
 <a href="signup.html">Signup</a>
 </nav>
@@ -62,4 +63,5 @@
     </body>
 
 </html>
+
 
