@@ -53,7 +53,7 @@
                         When clicked, it goes to the page of the associated product with the help of a query string. -->
                         <a href="product.php?name=<?=$product['ProductName']?>">
                             <div> 
-                                <img src = "<?= $product['Picture'] ?>">
+                                <img src="<?= $product['Picture'] ?>" alt="<?= $product['ProductName'] ?>">
                                 <h2><?= $product['ProductName'] ?></h2>
                             </div>
                         </a>
@@ -68,5 +68,6 @@
     </body>
 
 </html>
+
 
 
