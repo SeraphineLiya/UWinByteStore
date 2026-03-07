@@ -60,12 +60,14 @@
         <span>$<?= $topItem['Price'] ?></span> <!--Display the price -->
         <br>
         <p><?= $topItem['Description'] ?> <!-- Short text description of the product option -->
+        </p>
             <footer>
 <p>&copy; 2026 UWinByteStore</p>
 </footer>
     </body>
 
 </html>
+
 
 
 
