@@ -1,0 +1,57 @@
+<!-- Help page for the managing accounts through the admin interface -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Help | UWinByteStore</title>
+<meta name="description" content=" Help and user guide for navigating UWinByteStore and browsing technology products.">
+<meta name="keywords" content="UWinByteStore help, user guide, tech catalog help, website navigation help">
+<meta name="robots" content="index, follow">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+<h1>UWinByteStore</h1>
+<nav>
+<a href="index.html">Home</a>
+<a href="catalog.php">Products</a>
+<a href="about.html">About</a>
+<a href="help.html">Help</a>
+<a href="login.html">Login</a>
+<a href="signup.html">Signup</a>
+</nav>
+</header>
+<main>
+    <!-- Container for establishing grid placement -->
+    <div class = "container">
+        <!-- Main content of the page-->
+        <div class = "maincontent">
+            <h1>Help & User Guide: Managing User Accounts</h1>
+            <p>User accounts can be managed easily through the front-end admin portal. Upon logging in and accessing the appropriate page,
+                you will be presented with a list of all user accounts currently in the website's database. This list includes the user 
+                account ID (automatically generated), along with the email address / username of the account, their first and last name,
+                as well as the current status of their account.
+            </p>
+            <br>
+            <p>Currently valid user account statuses are 'Pending', 'Blocked', and 'Admin'. Pending status only applies to user accounts
+                that have not yet been assigned a permission level by an admin. The account list will be sorted so that such accounts are 
+                always displayed at the top. Blocked status simply means that admin permissions were not granted to the account, while 
+                Admin status means that they were.
+            </p>
+            <br>
+            <p>
+                To change an account's status, simply select the checkbox that applies to the accounts whose status you want to change, 
+                then click the button to either 'Make Admin' (set status to Admin), 'Block Admin' (set status to Block), or 'Delete' to 
+                delete that user's account permanently. Be very careful with these options, as you can change or delete your own account 
+                here too. If all admin accounts are deleted, the system admin must manually set the permission level of an account to 
+                'Admin' again to regain access to the front-end interface, following the same procedure as when the website is created.
+            </p>
+        </div>
+    </div>
+</main>
+<footer>
+<p>&copy; 2026 UWinByteStore</p>
+</footer>
+</body>
+</html>

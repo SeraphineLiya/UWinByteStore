@@ -1,0 +1,68 @@
+<!-- Help page for the page on which you enter new product records -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Help | UWinByteStore</title>
+<meta name="description" content=" Help and user guide for navigating UWinByteStore and browsing technology products.">
+<meta name="keywords" content="UWinByteStore help, user guide, tech catalog help, website navigation help">
+<meta name="robots" content="index, follow">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+<h1>UWinByteStore</h1>
+<nav>
+<a href="index.html">Home</a>
+<a href="catalog.php">Products</a>
+<a href="about.html">About</a>
+<a href="help.html">Help</a>
+<a href="login.html">Login</a>
+<a href="signup.html">Signup</a>
+</nav>
+</header>
+<main>
+    <!-- Container for establishing grid placement -->
+    <div class = "container">
+        <!-- Main content of the page-->
+        <div class = "maincontent">
+            <h1>Help & User Guide: Item Details</h1>
+            <p>From the page modifypdb page, it is possible to enter new values to be put in the product / item database. The item ID field 
+                at the top of the box can be used to determine whether you are entering a new record or modifying an existing one. If it is 
+                set to 'New', then submitting this form will create a new item, while if it is set to a number, submitting the form will change 
+                the values of that item based on what you entered in the form. Before adding or changing any items though, it is important 
+                to know how the database is structured. 
+            </p>
+            <br>
+            <p>
+                The database of items is structured such that each item (record) represents a single option of a product. The individual option
+                by 'Item Name', and all other attributes are the values for that individual item / option. The product name is used to group
+                1 or more items as a single 'product' in the catalog. Items with matching product names will be displayed as a single product
+                page in the user-facing catalog, with details for the currently selected item / option being shown. For example, I may have 
+                a wired mouse as one item and wireless mouse as another. These two entries can have different prices, images, descriptions, 
+                and so on, but if they both have the product name "Mouse", they will be grouped under the single title of 'Mouse' on one 
+                page with the currently selected option being displayed.
+            </p>
+            <br>
+            <p>
+                Each field of the form on modifypdb will set a different attribute of the item. Item Name describes the specific item / option
+                name of the current record. Product Name is used to group options together as described above. Price is a decimal value with 
+                two numbers after the decimal, while the description is for the current option and will be displayed below the image on the 
+                product page when it is selected. Image Path* records the relative path to where the image itself is stored. If you wish to 
+                upload new images, you must upload the image itself through the Direct Admin portal used to install the website, and then 
+                specify the path to where it was uploaded so that it is associated and displayed with the current item.  
+            </p>
+            <br>
+            <p>
+                After entering all of the relevant fields, you can then submit using the submit button, or cancel any changes with the cancel 
+                button. If you want to delete an item from the database, simply click the delete button on this page.
+            </p>
+        </div>
+    </div>
+</main>
+<footer>
+<p>&copy; 2026 UWinByteStore</p>
+</footer>
+</body>
+</html>
