@@ -34,7 +34,7 @@
     <meta name="keywords" content="product details, technology catalog, keyboard, mouse, webcam, projector, electronics">
     <meta name="robots" content="index, follow">
 
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/main.css">
 
     <!-- Pass data to JS-->
     <script>

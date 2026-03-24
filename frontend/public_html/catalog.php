@@ -20,7 +20,7 @@
 <meta name="description" content=" Browse the UWinByteStore catalog of recommended technology products including keyboards, webcams, projectors, storage devices, and more.">
 <meta name="keywords" content="technology catalog, keyboards, webcams, projectors, SSD, power bank, tech accessories, electronics">
 <meta name="robots" content="index, follow">
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="css/main.css">
 </head>
 
 <!-- As with all our pages, it is structured as one top-level container that contains at least
