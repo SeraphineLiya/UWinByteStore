@@ -1,11 +1,51 @@
+html
+{
+    height:100%;
+}
+
+body{
+    background: linear-gradient(170deg,#EAF6FF 72%, #ffd268 100%);
+}
+
+header{
+    display:flex;
+    flex-direction:column;
+    align-content:space-evenly;
+    width:100%;
+    background: #1E88E5;
+    padding-block:15px;
+}
+
+header h1{
+    margin-left:5%;
+    margin-top:0;
+}
+
+header nav{
+    padding-block:10px;
+    background: #0055B8;
+    padding-left:5%;
+}
+
+header a{
+    color:white;
+}
+
 .container{
-    background-color: rgba(226, 89, 43, 0.218);
-    margin:30px;
     padding:30px;
     padding-inline: 10%;
 }
 
 .maincontent{
-    background-color:rgba(15, 247, 170, 0.05);
-    padding-inline:5%;
+    background: linear-gradient(#1E88E5 0%, #3AAFF5 100%);
+    padding:5%;
+    padding-block:2.5%;
+}
+
+.maincontent{
+    color:#1A1A1A;
+}
+
+.maincontent h1{
+    text-decoration: underline;
 }
