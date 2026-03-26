@@ -4,21 +4,24 @@ html
 }
 
 body{
+    margin:0;
+    height:100%;
     background: linear-gradient(170deg,#EAF6FF 72%, #ffd268 100%);
+    background-image: url("../images/background.png");
+    background-size:100% 100%;
 }
 
 header{
-    display:flex;
-    flex-direction:column;
-    align-content:space-evenly;
+    --padding-size: 15px;
     width:100%;
     background: #1E88E5;
-    padding-block:15px;
+    padding-block: var(--padding-size);
 }
 
 header h1{
     margin-left:5%;
     margin-top:0;
+    margin-bottom:var(--padding-size);
 }
 
 header nav{
@@ -28,7 +31,15 @@ header nav{
 }
 
 header a{
+    padding-inline:3px;
+    margin-inline:7px;
     color:white;
+    
+    /*stupid chud underline
+    padding-bottom:0;
+    text-decoration-color: transparent;
+    border-bottom: 2px solid white;
+    */
 }
 
 .container{
@@ -37,6 +48,7 @@ header a{
 }
 
 .maincontent{
+    border-radius:6px;
     background: linear-gradient(#1E88E5 0%, #3AAFF5 100%);
     padding:5%;
     padding-block:2.5%;
@@ -48,4 +60,8 @@ header a{
 
 .maincontent h1{
     text-decoration: underline;
+}
+
+footer{
+    bottom:0;
 }
