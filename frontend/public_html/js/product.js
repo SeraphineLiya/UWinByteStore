@@ -7,21 +7,40 @@ document.addEventListener("DOMContentLoaded", () => {
     const productImage = document.getElementById("productImage");
 
     // Safety check
-    if (!select || !productOptions) return;
+    if (!select || !window.productOptions) return;
 
-    select.addEventListener("change", function () {
+    // Cache for preloaded images
+    const imageCache = {};
 
-        const selectedIndex = this.value;
-        const selectedItem = productOptions[selectedIndex];
+    productOptions.forEach(item => {
+        const img = new Image();
+        img.src = item.Picture;   // browser downloads once
+        imageCache[item.Picture] = img;
+    });
 
-        // Update price
-        priceDisplay.textContent = "$" + selectedItem.Price;
+    function updateProduct(index) {
 
-        // Update description
-        descriptionDisplay.textContent = selectedItem.Description;
+        const selectedItem = productOptions[index];
+        if (!selectedItem) return;
 
-        // Update image
-        productImage.src = selectedItem.Picture;
+        // Update text ONLY if changed (avoids repaint cost)
+        const newPrice = "$" + selectedItem.Price;
+        if (priceDisplay.textContent !== newPrice) {
+            priceDisplay.textContent = newPrice;
+        }
+
+        if (descriptionDisplay.textContent !== selectedItem.Description) {
+            descriptionDisplay.textContent = selectedItem.Description;
+        }
+
+        // Instant image swap (already cached)
+        if (productImage.src !== selectedItem.Picture) {
+            productImage.src = selectedItem.Picture;
+        }
+    }
+
+    select.addEventListener("change", e => {
+        updateProduct(e.target.value);
     });
 
 });

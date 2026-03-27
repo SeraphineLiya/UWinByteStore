@@ -1,98 +1,123 @@
 <!-- Individual product page with item details -->
 
-<!-- The following php block will query the data needed for this page (all item attributes, details, and other options) -->
 <?php 
-    //Calls file that establishes a connection to the database.
-    require_once("../Private/dbConnect.php");
+require_once("../Private/dbConnect.php");
 
-    //To run the query securely, we must prepare it this time since it takes flexible input from user.
-    $sqlQuery = $dbPublicConn->prepare(
-        "SELECT * FROM Items WHERE ProductName = ? ORDER BY ID"
-    );
+/* ---------- Secure query ---------- */
+$sqlQuery = $dbPublicConn->prepare(
+    "SELECT * FROM Items WHERE ProductName = ? ORDER BY ID"
+);
 
-    $sqlQuery->bind_param("s", $_GET['name']); //Retrieve product name from GET query string and put it into sql safely
-    $sqlQuery->execute(); //Run the query
-    $queryResult = $sqlQuery->get_result(); //Save the results of the query
+$productName = $_GET['name'] ?? '';
+$sqlQuery->bind_param("s", $productName);
+$sqlQuery->execute();
 
-    $items = [];
+$queryResult = $sqlQuery->get_result();
 
-    while ($row = $queryResult->fetch_assoc()) {
-        $items[] = $row;
-    }
+$items = [];
 
-    $topItem = $items[0]; // default item
+while ($row = $queryResult->fetch_assoc()) {
+    $items[] = $row;
+}
+
+/* Safety fallback */
+if (empty($items)) {
+    die("Product not found.");
+}
+
+$topItem = $items[0];
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Product | UWinByteStore</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="description" content=" View product details for technology items in the UWinByteStore catalog, including options, price, and description.">
-    <meta name="keywords" content="product details, technology catalog, keyboard, mouse, webcam, projector, electronics">
-    <meta name="robots" content="index, follow">
+<title><?= htmlspecialchars($topItem['ProductName']) ?> | UWinByteStore</title>
 
-    <link rel="stylesheet" href="styles.css">
+<meta name="description" content="View product details for technology items in the UWinByteStore catalog.">
+<meta name="keywords" content="technology catalog, electronics">
+<meta name="robots" content="index, follow">
 
-    <!-- Pass data to JS-->
-    <script>
-        const productOptions = <?= json_encode($items) ?>;
-    </script>
+<link rel="stylesheet" href="css/main.css">
 
-    <!-- External JS -->
-    <script src="js/product.js" defer></script>
+<!-- Pass data safely to JS -->
+<script>
+const productOptions = <?= json_encode($items, JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT) ?>;
+</script>
+
+<!-- External JS -->
+<script src="js/product.js" defer></script>
+
 </head>
 
-<!-- As with all our pages, it is structured as one top-level container that contains at least
-one div for the maincontent, with the possibility of adding additional divs above or below
-for common elements like a nav bar, or page header and footer.-->
 <body>
 
-    <header>
-        <h1>UWinByteStore</h1>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="catalog.php">Products</a>
-            <a href="about.html">About</a>
-            <a href="help.html">Help</a>
-            <a href="login.html">Login</a>
-            <a href="signup.html">Signup</a>
-        </nav>
-    </header>
+<header>
+    <h1>UWinByteStore</h1>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="catalog.php">Products</a>
+        <a href="about.html">About</a>
+        <a href="help.html">Help</a>
+        <a href="login.html">Login</a>
+        <a href="signup.html">Signup</a>
+    </nav>
+</header>
 
-    <h1><?= $topItem['ProductName'] ?></h1> <!-- Product title -->
-    <hr>
+<div class="container">
+<div class="maincontent">
 
-    <img id="productImage"
-     src="<?= $topItem['Picture']?>"
-     alt="<?= $topItem['ProductName'] ?>">
+<h1 class="product-title">
+    <?= htmlspecialchars($topItem['ProductName']) ?>
+</h1>
 
-    <br>
+<hr>
 
-    <select id="productOptionSelect">
+<div class="product-layout">
 
-        <!-- While loop to get all option names of this product -->
-        <?php foreach ($items as $index => $itemOption) { ?>
-            <option value="<?= $index ?>">
-                <?= $itemOption['ItemName'] ?>
-            </option>
-        <?php } ?>
+    <!-- LEFT: IMAGE -->
+    <div class="product-image-area">
+        <img
+            id="productImage"
+            src="<?= htmlspecialchars($topItem['Picture']) ?>"
+            alt="<?= htmlspecialchars($topItem['ProductName']) ?>"
+            loading="eager"
+            decoding="async"
+        >
+    </div>
 
-    </select>
+    <!-- RIGHT: DETAILS -->
+    <div class="product-details">
 
-    <span id="priceDisplay">$<?= $topItem['Price'] ?></span> <!--Display the price -->
+        <span id="priceDisplay" class="product-price">
+            $<?= htmlspecialchars($topItem['Price']) ?>
+        </span>
 
-    <br>
+        <label for="productOptionSelect">Options:</label>
 
-    <p id="descriptionDisplay">
-        <?= $topItem['Description'] ?>
-    </p>
+        <select id="productOptionSelect">
+            <?php foreach ($items as $index => $itemOption) { ?>
+                <option value="<?= $index ?>">
+                    <?= htmlspecialchars($itemOption['ItemName']) ?>
+                </option>
+            <?php } ?>
+        </select>
 
-    <footer>
-        <p>&copy; 2026 UWinByteStore</p>
-    </footer>
+        <p id="descriptionDisplay" class="product-description">
+            <?= htmlspecialchars($topItem['Description']) ?>
+        </p>
+
+    </div>
+
+</div>
+
+</div>
+</div>
+
+<footer>
+    <p>&copy; 2026 UWinByteStore</p>
+</footer>
 
 </body>
 </html>
