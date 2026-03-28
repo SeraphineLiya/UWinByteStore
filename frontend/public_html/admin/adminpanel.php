@@ -8,7 +8,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>About | UWinByteStore</title>
+<title>Admin Panel | UWinByteStore</title>
 <meta name="description" content=" Learn about UWinByteStore and our technology catalog of recommended tech products and accessories.">
 <meta name="keywords" content="technology catalog, tech accessories, keyboards, webcams, projectors, electronics">
 <meta name="robots" content="index, follow">
