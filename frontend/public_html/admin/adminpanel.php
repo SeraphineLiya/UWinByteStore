@@ -13,6 +13,7 @@
 <meta name="keywords" content="technology catalog, tech accessories, keyboards, webcams, projectors, electronics">
 <meta name="robots" content="index, follow">
 <link rel="stylesheet" href="../css/main.css">
+<script src="/js/theme.js" defer></script>
 </head>
 <!-- As with all our pages, it is structured as one top-level container that contains at least
  one div for the maincontent, with the possibility of adding additional divs above or below
@@ -35,15 +36,6 @@
                 <!-- Fieldset box with hyperlinks to a page for each admin option -->
                  <fieldset>
                     <legend>Administrator Options</legend>
-
-                    <!-- Dropdown to select CSS theme and button to submit to php block at top of page -->
-                    <form action="" method="post">
-                        <label for="cssTheme">Website Theme:</label>
-                        <select name="cssTheme" id="cssTheme">
-                            <option value="Theme1.css">Theme 1</option> <!-- Theme options go here -->
-                        </select>
-                        <button type="submit">Set</button>
-                    </form>
                     <span><strong>Data Management:</strong></span><br>
                     <!-- TODO: @NotDashy, the following hyperlinks would look better with CSS Button styling I think --> 
                     <a href="manageusers.php" class = "hyperButton">Manage User Accounts</a> 

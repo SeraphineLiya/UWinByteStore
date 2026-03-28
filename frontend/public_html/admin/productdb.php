@@ -22,6 +22,7 @@
 <meta name="keywords" content="technology catalog, tech accessories, keyboards, webcams, projectors, electronics">
 <meta name="robots" content="index, follow">
 <link rel="stylesheet" href="../css/main.css">
+<script src="/js/theme.js" defer></script>
 </head>
 <!-- As with all our pages, it is structured as one top-level container that contains at least
  one div for the maincontent, with the possibility of adding additional divs above or below
