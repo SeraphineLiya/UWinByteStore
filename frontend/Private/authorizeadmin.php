@@ -1,6 +1,6 @@
 <!-- This code confirms that the currently logged-in user account has admin permissions.
  Without it, the page will be redirected to a Permission Denied page and no protected content will
- render. It is placed at the top of protected pages through require().
+ render. It is placed at the top of protected pages through require().-->
 <?php
     //Lock the page to only those who have authorization.
     session_start();
