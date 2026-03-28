@@ -6,41 +6,38 @@ document.addEventListener("DOMContentLoaded", () => {
     const descriptionDisplay = document.getElementById("descriptionDisplay");
     const productImage = document.getElementById("productImage");
 
-    // Safety check
-    if (!select || !window.productOptions) return;
+    // Safety checks
+    if (!select) return;
+    if (typeof productOptions === "undefined") return;
 
-    // Cache for preloaded images
+    // Preload images 
     const imageCache = {};
 
     productOptions.forEach(item => {
         const img = new Image();
-        img.src = item.Picture;   // browser downloads once
+        img.src = item.Picture;
         imageCache[item.Picture] = img;
     });
 
+    // Update function
     function updateProduct(index) {
 
         const selectedItem = productOptions[index];
         if (!selectedItem) return;
 
-        // Update text ONLY if changed (avoids repaint cost)
-        const newPrice = "$" + selectedItem.Price;
-        if (priceDisplay.textContent !== newPrice) {
-            priceDisplay.textContent = newPrice;
-        }
+        // Update price
+        priceDisplay.textContent = "$" + selectedItem.Price;
 
-        if (descriptionDisplay.textContent !== selectedItem.Description) {
-            descriptionDisplay.textContent = selectedItem.Description;
-        }
+        // Update description
+        descriptionDisplay.textContent = selectedItem.Description;
 
         // Instant image swap (already cached)
-        if (productImage.src !== selectedItem.Picture) {
-            productImage.src = selectedItem.Picture;
-        }
+        productImage.src = selectedItem.Picture;
     }
 
-    select.addEventListener("change", e => {
-        updateProduct(e.target.value);
+    // Dropdown change
+    select.addEventListener("change", function () {
+        updateProduct(this.value);
     });
 
 });
