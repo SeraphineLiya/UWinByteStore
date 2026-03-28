@@ -1,0 +1,7 @@
+:root {
+    --bg-gradient: linear-gradient(170deg, #E3F2FD 72%, #B3E5FC 100%);
+    --header-main: #1565C0;
+    --header-nav: #0D47A1;
+    --content-gradient: linear-gradient(#42A5F5, #90CAF9);
+    --price-color: #0d47a1;
+}
