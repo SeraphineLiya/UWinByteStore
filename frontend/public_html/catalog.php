@@ -10,6 +10,7 @@
     <meta name="robots" content="index, follow">
 
     <link rel="stylesheet" href="css/main.css">
+    <script src="/js/theme.js" defer></script>
 </head>
 
 <!-- As with all our pages, it is structured as one top-level container that contains at least

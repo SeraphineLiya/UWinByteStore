@@ -40,6 +40,7 @@ $topItem = $items[0];
 <meta name="robots" content="index, follow">
 
 <link rel="stylesheet" href="css/main.css">
+<script src="/js/theme.js" defer></script>
 
 <!-- Pass data safely to JS -->
 <script>
