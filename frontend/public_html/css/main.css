@@ -40,12 +40,16 @@ header h1 {
 }
 
 header nav {
+    display: flex;
+    flex-wrap: nowrap; /* prevent wrapping */
+    overflow-x: auto;  /* horizontal scroll on small screens */
     padding-block: 10px;
-    background: var(--header-main);
+    background: var(--header-nav);
     padding-left: 5%;
 }
 
 header a {
+    flex: 0 0 auto;
     padding-inline: 6px;
     margin-inline: 7px;
     color: white;
@@ -187,4 +191,36 @@ footer {
     .container {
         padding: 20px 5%;
     }
+
+     header h1 {
+        font-size: 1.2rem;
+        margin-left: 3%;
+    }
+
+    header a {
+        padding-inline: 5px;
+        margin-inline: 5px;
+        font-size: 0.9rem;
+    }
+
+    .product-price {
+        font-size: 1.4rem;
+    }
+
+    .product-description {
+        max-width: 100%;
+    }
+}
+
+/* VIDEO */
+.responsive-video {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+}
+
+.responsive-iframe {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
 }
