@@ -1,4 +1,4 @@
-<!-- Help page for the changing the product database through the admin interface -->
+<!-- Help page for the managing accounts through the admin interface -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -27,30 +27,28 @@
     <div class = "container">
         <!-- Main content of the page-->
         <div class = "maincontent">
-            <h1>Help & User Guide: Change Products</h1>
-            <p>Changing products within the front-end admin interface is relatively straightforward. Upon navigating to the relevant page,
-                 you will see a button to add a new record, and a list below it with all of the items currently in the database. Click the 
-                 button to add a new item to the database, or click on any of the existing records to open a page where you can edit them.
-                 Before adding or changing any items though, it is important to know how the catalog is structured. 
+            <h1>Help & User Guide: Managing User Accounts</h1>
+            <p>User accounts can be managed easily through the front-end admin portal. Upon logging in and accessing the appropriate page,
+                you will be presented with a list of all user accounts currently in the website's database. This list includes the user 
+                account ID (automatically generated), along with the email address / username of the account, their first and last name,
+                as well as the current status of their account.
             </p>
-            <br>
+            <p>Currently valid user account statuses are 'Pending', 'Blocked', and 'Admin'. Pending status only applies to user accounts
+                that have not yet been assigned a permission level by an admin. The account list will be sorted so that such accounts are 
+                always displayed at the top. Blocked status simply means that admin permissions were not granted to the account, while 
+                Admin status means that they were.
+            </p>
             <p>
-                The catalog of items is structured such that each item (record) represents a single option of a product. The individual option
-                by 'Item Name', and all other attributes are the values for that individual item / option. The product name is used to group
-                1 or more items as a single 'product' in the catalog. Items with matching product names will be displayed as a single product
-                page in the user-facing catalog, with details for the currently selected item / option being shown. For example, I may have 
-                a wired mouse as one item and wireless mouse as another. These two entries can have different prices, images, descriptions, 
-                and so on, but if they both have the product name "Mouse", they will be grouped under the single title of 'Mouse' on one 
-                page with the currently selected option being displayed.
+                To change an account's status, simply select the checkbox that applies to the accounts whose status you want to change, 
+                then click the button to either 'Make Admin' (set status to Admin), 'Block Admin' (set status to Block), or 'Delete' to 
+                delete that user's account permanently. Be very careful with these options, as you can change or delete your own account 
+                here too. If all admin accounts are deleted, the system admin must manually set the permission level of an account to 
+                'Admin' again to regain access to the front-end interface, following the same procedure as when the website is created.
             </p>
-            <br>
-            <p>
-                To add a new item / option, simply click the 'Add Item' button. This will open a blank form in which the appropriate values 
-                can be entered. If you want this to be a brand new product, simply choose a product name that is not already in use. If you 
-                would like this to be a new option for an existing product, enter that product's name (matching case and spacing exactly) 
-                and it will be displayed as an option of that product when displayed to the user. The same concepts apply when editing existing
-                items, which you can do by clicking on them in the list.
-            </p>
+            <video width="1080" height="720" controls>
+                <source src="../videos/accountHelp.mp4" type="video/mp4">
+                Error: Your browser does not support this video type
+            </video>
         </div>
     </div>
 </main>
