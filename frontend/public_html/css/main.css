@@ -10,13 +10,18 @@
 /* GLOBAL */
 html {
     height: 100%;
+    background: var(--bg-gradient);
+}
+
+@font-face{
+    font-family:nexa-family;
+    src:url(nexa/Nexa-Heavy.ttf);
 }
 
 body {
     margin: 0;
     min-height: 100%;
-    background: var(--bg-gradient);
-    /*background-image: url("../images/background.png");*/
+    background-image: url("../images/WebsiteBackground/background_detail.png");
     background-size: cover;
     /* better scaling */
     background-repeat: no-repeat;
@@ -31,9 +36,11 @@ header {
     width: 100%;
     background: var(--header-main);
     padding-block: var(--padding-size);
+    font-family:nexa-family;
 }
 
 header h1 {
+    font-size:2.1em;
     margin-left: 5%;
     margin-top: 0;
     margin-bottom: var(--padding-size);
