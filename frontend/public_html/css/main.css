@@ -234,3 +234,12 @@ footer {
     height: auto;
     aspect-ratio: 16 / 9;
 }
+
+/*Login page specific styling*/
+.maincontent form fieldset legend{
+    font-weight:bold;
+}
+
+.maincontent form fieldset{
+    border: var(--header-nav) solid 4px;
+}
